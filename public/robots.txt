@@ -1,0 +1,11 @@
+# Robots.txt for Nasser Abu Abdullah Digital Finance Brokerage
+User-agent: *
+Allow: /
+Allow: /assets/
+Allow: /#services
+Allow: /#apply
+Allow: /#faq
+Allow: /#disclaimers
+
+# Sitemaps
+Sitemap: https://ais-pre-fgz5gyxlp6gxay5bt4xxfb-445206395930.europe-west3.run.app/sitemap.xml

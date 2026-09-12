@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- Homepage: Direct Personal Financing -->
+  <url>
+    <loc>https://ais-pre-fgz5gyxlp6gxay5bt4xxfb-445206395930.europe-west3.run.app/</loc>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://ais-pre-fgz5gyxlp6gxay5bt4xxfb-445206395930.europe-west3.run.app/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ais-pre-fgz5gyxlp6gxay5bt4xxfb-445206395930.europe-west3.run.app/?lang=en" />
+  </url>
+
+  <!-- Comprehensive Financial Brokerage Services Page -->
+  <url>
+    <loc>https://ais-pre-fgz5gyxlp6gxay5bt4xxfb-445206395930.europe-west3.run.app/#services</loc>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Interactive Financing Estimator -->
+  <url>
+    <loc>https://ais-pre-fgz5gyxlp6gxay5bt4xxfb-445206395930.europe-west3.run.app/#calculator</loc>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- 30-Second Pre-Approval Eligibility Checker -->
+  <url>
+    <loc>https://ais-pre-fgz5gyxlp6gxay5bt4xxfb-445206395930.europe-west3.run.app/#eligibility</loc>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Consultation & Direct Apply Page -->
+  <url>
+    <loc>https://ais-pre-fgz5gyxlp6gxay5bt4xxfb-445206395930.europe-west3.run.app/#apply</loc>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Regulatory Disclosures & Financial Disclaimers Page -->
+  <url>
+    <loc>https://ais-pre-fgz5gyxlp6gxay5bt4xxfb-445206395930.europe-west3.run.app/#disclaimers</loc>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Frequently Asked Questions -->
+  <url>
+    <loc>https://ais-pre-fgz5gyxlp6gxay5bt4xxfb-445206395930.europe-west3.run.app/#faq</loc>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>
