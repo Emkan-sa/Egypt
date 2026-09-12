@@ -86,11 +86,14 @@ export function trackViewContent(): void {
   if (typeof window === 'undefined' || !window.snaptr) return;
 
   try {
+    // @ts-ignore
     window.snaptr('track', 'VIEW_CONTENT');
   } catch (err) {
     console.warn('[Snapchat Pixel] VIEW_CONTENT warning:', err);
   }
 }
+
+let __leadTrackedForCurrentSession = false;
 
 /**
  * 3. LEAD
@@ -100,8 +103,14 @@ export function trackViewContent(): void {
 export function trackLeadSubmission(): void {
   if (typeof window === 'undefined' || !window.snaptr) return;
 
+  if (__leadTrackedForCurrentSession) {
+    return; // Prevent duplicate LEAD firing for the same submission process
+  }
+
   try {
+    // @ts-ignore
     window.snaptr('track', 'LEAD');
+    __leadTrackedForCurrentSession = true;
   } catch (err) {
     console.warn('[Snapchat Pixel] LEAD tracking warning:', err);
   }

@@ -101,7 +101,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           >
             <div className="w-12 h-12 rounded-2xl overflow-hidden bg-emerald-950 border-2 border-amber-400/80 flex items-center justify-center shadow-md group-hover:scale-105 transition-transform shrink-0">
               <img 
-                src="/assets/logo.jpg" 
+                src="/assets/logo.webp" 
                 alt="Nasser Abu Abdullah Logo" 
                 width={48}
                 height={48}

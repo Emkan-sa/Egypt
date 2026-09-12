@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { Calculator, Sparkles, MessageCircle, ArrowRight, ArrowLeft, ShieldCheck, CheckCircle2 } from 'lucide-react';
 import { Language, TranslationStrings } from '../types';
 import { createWhatsAppUrl } from '../utils/whatsapp';
-import { trackWhatsAppContact, trackCalculatorCalculation, trackSnapchatEvent } from '../utils/snapchatPixel';
+import { logWhatsAppClick } from '../utils/snapchatPixel';
 
 interface FinancingCalculatorProps {
   lang: Language;
@@ -46,17 +46,14 @@ export const FinancingCalculator: React.FC<FinancingCalculatorProps> = ({
 
   const handleAmountChange = (newVal: number) => {
     setAmount(newVal);
-    trackCalculatorCalculation(newVal, tenureMonths, sector);
   };
 
   const handleTenureChange = (months: number) => {
     setTenureMonths(months);
-    trackCalculatorCalculation(amount, months, sector);
   };
 
   const handleSectorChange = (sec: string) => {
     setSector(sec);
-    trackCalculatorCalculation(amount, tenureMonths, sec);
   };
 
   const whatsappInquiryMsg = isAr
@@ -242,11 +239,7 @@ export const FinancingCalculator: React.FC<FinancingCalculatorProps> = ({
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => {
-                  trackWhatsAppContact('calculator_result_btn', {
-                    amount,
-                    tenure: tenureMonths,
-                    installment: calculation.monthlyInstallment,
-                  });
+                  logWhatsAppClick('calculator_result_btn');
                 }}
                 className="w-full min-h-[48px] py-3.5 px-4 rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-white font-black text-xs sm:text-sm flex items-center justify-center gap-2 shadow-lg shadow-emerald-950/50 active:scale-98 transition-all cursor-pointer"
               >
@@ -257,7 +250,6 @@ export const FinancingCalculator: React.FC<FinancingCalculatorProps> = ({
               <a
                 href="#apply"
                 onClick={() => {
-                  trackSnapchatEvent('START_CHECKOUT', { source: 'calculator_form_cta', amount });
                   if (onApplyWithAmount) {
                     onApplyWithAmount(amount, tenureMonths, sector);
                   }

@@ -158,7 +158,7 @@ export const Hero: React.FC<HeroProps> = ({ lang, t }) => {
               {/* Top Visual Poster Header */}
               <div className="relative aspect-[4/3] sm:aspect-[16/10] overflow-hidden bg-emerald-950">
                 <img 
-                  src="/assets/poster.jpg" 
+                  src="/assets/poster.webp" 
                   alt="Nasser Abu Abdullah Financing Visual" 
                   width={600}
                   height={375}
@@ -175,7 +175,7 @@ export const Hero: React.FC<HeroProps> = ({ lang, t }) => {
                 <div className="absolute top-4 start-4 flex items-center gap-2.5 p-1.5 pe-3 rounded-2xl bg-neutral-900/90 border border-amber-400/50 backdrop-blur-md shadow-lg">
                   <div className="w-9 h-9 rounded-xl overflow-hidden bg-emerald-950 border border-amber-400/60 shrink-0">
                     <img 
-                      src="/assets/logo.jpg" 
+                      src="/assets/logo.webp" 
                       alt="NA Logo" 
                       width={36}
                       height={36}

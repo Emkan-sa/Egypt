@@ -44,7 +44,7 @@ export const Footer: React.FC<FooterProps> = ({
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 rounded-2xl overflow-hidden bg-emerald-950 border-2 border-amber-400 flex items-center justify-center shrink-0">
                 <img 
-                  src="/assets/logo.jpg" 
+                  src="/assets/logo.webp" 
                   alt="Nasser Abu Abdullah Logo" 
                   width={48}
                   height={48}

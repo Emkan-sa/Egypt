@@ -11,6 +11,8 @@ export default defineConfig(() => {
         '@': path.resolve(__dirname, '.'),
       },
     },
+    // Dynamically set base path for GitHub Pages based on environment variable (set by GitHub Actions)
+    base: process.env.GITHUB_PAGES === 'true' ? `/${process.env.GITHUB_REPOSITORY?.split('/')[1]}/` : '/',
     server: {
       // HMR is disabled in AI Studio via DISABLE_HMR env var.
       // Do not modifyâfile watching is disabled to prevent flickering during agent edits.

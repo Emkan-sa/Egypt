@@ -18,7 +18,7 @@ import {
 } from 'lucide-react';
 import { Language, TranslationStrings } from '../types';
 import { createWhatsAppUrl, generateLeadFormMessage } from '../utils/whatsapp';
-import { trackLeadSubmission, logWhatsAppClick } from '../utils/snapchatPixel';
+import { logWhatsAppClick } from '../utils/snapchatPixel';
 import { LeadSuccessModal, LeadSubmissionDetails } from './LeadSuccessModal';
 import { LeadToastNotification } from './LeadToastNotification';
 
@@ -77,10 +77,6 @@ export const LeadForm: React.FC<LeadFormProps> = ({ lang, t, onOpenLegal }) => {
 
     setIsSubmitting(true);
 
-    // Track Snapchat Pixel LEAD conversion only on actual form submission (strictly no financial or ecommerce data)
-    trackLeadSubmission();
-    logWhatsAppClick('lead_form_submit');
-
     // Generate WhatsApp Message with only the non-sensitive fields
     const msg = generateLeadFormMessage(
       {
@@ -110,14 +106,18 @@ export const LeadForm: React.FC<LeadFormProps> = ({ lang, t, onOpenLegal }) => {
 
     setSubmissionDetails(details);
 
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSuccess(true);
-      setShowSuccessModal(true);
-      setShowToast(true);
-      // Open WhatsApp chat in background/tab
-      window.open(targetUrl, '_blank');
-    }, 400);
+    // No actual backend API currently exists for form submission.
+    // Following strict instructions: DO NOT mock success, DO NOT fire LEAD.
+    setIsSubmitting(false);
+    setIsSuccess(true);
+    setShowSuccessModal(true);
+    setShowToast(true);
+    
+    // Log internal analytics specifically for the WhatsApp redirect action
+    logWhatsAppClick('whatsapp_redirect');
+    
+    // Open WhatsApp chat in background/tab
+    window.open(targetUrl, '_blank');
   };
 
   return (

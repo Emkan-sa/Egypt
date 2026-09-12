@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { CheckCircle2, AlertCircle, HelpCircle, ArrowRight, ArrowLeft, MessageCircle, ShieldCheck, Sparkles, RefreshCw } from 'lucide-react';
 import { Language, TranslationStrings } from '../types';
 import { createWhatsAppUrl } from '../utils/whatsapp';
-import { trackWhatsAppContact, trackEligibilityTest, trackSnapchatEvent } from '../utils/snapchatPixel';
+import { logWhatsAppClick } from '../utils/snapchatPixel';
 
 interface EligibilityCheckerProps {
   lang: Language;
@@ -37,8 +37,6 @@ export const EligibilityChecker: React.FC<EligibilityCheckerProps> = ({ lang }) 
     if (salaryRange === '15000+') estimatedLimit = 350000;
     if (salaryRange === '4000-7000') estimatedLimit = 750000;
     if (hasObligations === 'simah') estimatedLimit = 100000;
-
-    trackEligibilityTest('eligible', sector, estimatedLimit);
   };
 
   const resetChecker = () => {
@@ -271,10 +269,7 @@ export const EligibilityChecker: React.FC<EligibilityCheckerProps> = ({ lang }) 
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => {
-                      trackWhatsAppContact('eligibility_result_whatsapp', {
-                        result: result.title,
-                        sector,
-                      });
+                      logWhatsAppClick('eligibility_result_whatsapp');
                     }}
                     className="w-full sm:flex-1 min-h-[48px] py-3.5 px-5 rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-white font-black text-xs sm:text-sm flex items-center justify-center gap-2 shadow-lg shadow-emerald-950/40 active:scale-98 transition-all"
                   >
@@ -284,7 +279,6 @@ export const EligibilityChecker: React.FC<EligibilityCheckerProps> = ({ lang }) 
 
                   <a
                     href="#apply"
-                    onClick={() => trackSnapchatEvent('START_CHECKOUT', { source: 'eligibility_apply_cta' })}
                     className="w-full sm:w-auto min-h-[48px] py-3.5 px-6 rounded-xl bg-white/10 hover:bg-white/15 text-white font-bold text-xs flex items-center justify-center gap-2 border border-white/20 transition-all"
                   >
                     <span>{isAr ? 'قدّم طلبك الآن' : 'Apply Now'}</span>
